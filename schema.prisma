@@ -4,32 +4,12 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  url = env("DATABASE_URL")
 }
 
 model User {
-  id                          Int       @id @default(autoincrement())
-  username                    String    @unique
+  googleId                    String    @unique
   email                       String    @unique
   profilePicture              String?
   gender                      String
-  occupation                  String
-  educationLevel              String
-  preferredCity               String
-  preferredAccommodation      String
-  dailySchedule               String
-  smokingHabits               String
-  drinkingHabits              String
-  dietaryPreferences          String
-  petPreferences              String
-  introvertExtrovert          String
-  cleanlinessLevel            String
-  socialHabits                String
-  hobbiesAndInterests         String
-  languagePreferences         String
-  preferredSecurityMeasures   String
-  pastExperiencesWithRoommates String?
-  age                         Int
-  budgetPriceRange            Int
-  numberOfRoommates           Int
 }

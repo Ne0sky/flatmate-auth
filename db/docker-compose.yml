@@ -1,15 +1,17 @@
+version: '3.8'
+
 services:
   postgres:
     image: postgres:alpine
     container_name: flatmatedb
     environment:
       POSTGRES_DB: flatmatedb
-      POSTGRES_USER: flatmate
-      POSTGRES_PASSWORD: flatmate
+      POSTGRES_USER: username
+      POSTGRES_PASSWORD: password
     ports:
-      - "5433:5432"
+      - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
 volumes:
-  postgres_data: 
+  postgres_data:
