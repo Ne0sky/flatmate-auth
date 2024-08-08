@@ -8,8 +8,33 @@ datasource db {
 }
 
 model User {
-  googleId                    String    @unique
-  email                       String    @unique
-  profilePicture              String?
+  googleId       String    @id @unique
+  email          String    @unique
+  profilePicture String?
+  profile        Profile?
+}
+
+model Profile {
+  googleId                    String    @id @unique
   gender                      String
+  occupation                  String
+  educationLevel              String
+  preferredCity               String
+  preferredAccommodation      String
+  dailySchedule               String
+  smokingHabits               String
+  drinkingHabits              String
+  dietaryPreferences          String
+  petPreferences              String
+  introvertExtrovert          String
+  cleanlinessLevel            String
+  socialHabits                String
+  hobbiesAndInterests         String
+  languagePreferences         String
+  preferredSecurityMeasures   String
+  pastExperiencesWithRoommates String?
+  age                         Int
+  budgetPriceRange            Int
+  numberOfRoommates           Int
+  user                        User      @relation(fields: [googleId], references: [googleId])
 }
