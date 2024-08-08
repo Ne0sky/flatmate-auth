@@ -35,6 +35,7 @@ model Profile {
   pastExperiencesWithRoommates String?
   age                         Int
   budgetPriceRange            Int
+  leaseDurationPreference     Int
   numberOfRoommates           Int
   user                        User      @relation(fields: [googleId], references: [googleId])
 }
